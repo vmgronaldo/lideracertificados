@@ -89,7 +89,27 @@
     text-align: center;
     margin: 0 auto;
 }
+.firma_david{
+    position: relative;
+    width: 100%;
+}
+.firma_david img{
+    position: absolute;
+    right: 30%;
+    top: 77%;
+}
 
+.firma_david .name{
+    position: absolute;
+    right: 20%;
+    top: 88%;
+
+}
+.firma_david .cargo{
+    position: absolute;
+    right: 20%;
+    top: 91%;
+}
 h1 {
   position: relative;
   font-size: 65px;

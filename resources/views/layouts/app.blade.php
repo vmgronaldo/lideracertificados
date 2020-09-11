@@ -56,18 +56,18 @@
                 <li class="c-header-nav-item dropdown d-flex align-items-center">
                     <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                        aria-expanded="false">
-                        <div class="c-avatar"><img class="c-avatar-img" src="{{asset('assets/img/avatars/1.jpg')}}"
+                        <div class="c-avatar"><img class="c-avatar-img" src="{{asset('img/icon-lidera.png')}}"
                                                    alt="user@email.com"></div>
                     </a>
                     <ul class="c-header-nav ml-auto mr-4">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </li>
                             @endif
                         @else
@@ -81,7 +81,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Salir') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"

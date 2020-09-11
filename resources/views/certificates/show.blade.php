@@ -24,6 +24,12 @@
     <p class="curso"><strong>“{{$certificate->course->curso}}”</strong></p>
     <p class="fecha">Realizado el sábado, {{$certificate->course->date}} por la empresa Lidera EHSQ.</p>
     <p class="duracion">Con una duración de {{$certificate->course->time}} {{$certificate->course->extension}}.</p>
+
+    <div class="firma_david">
+        <img src="{{asset('img/firma_david.png')}}" width="200" alt="Firma">
+        <p class="name">David M. Arroyo Delgado</p>
+        <p class="cargo"><strong>GERENTE GENERAL</strong></p>
+    </div>
 </div>
 </body>
 
