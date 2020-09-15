@@ -41,7 +41,7 @@ class SeendCertificates extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Hola, tienes un nuevo certficado en LIDERA EHSQ - CAPACITACIONES ')
+            ->subject('Hola, tienes un nuevo certificado en LIDERA EHSQ - CAPACITACIONES ')
             ->from(config('mail.from.address'),config('mail.from.name'))
             ->markdown('mail.certificate.seend',$this->parameters);
     }
