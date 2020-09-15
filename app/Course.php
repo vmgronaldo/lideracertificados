@@ -23,7 +23,7 @@ class Course extends Model
 
     public function calendar()
     {
-        return $this->belongsTo(Calendar::class);
+        return $this->hasOne(Calendar::class);
     }
 
     public function trainer()

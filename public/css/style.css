@@ -39,7 +39,6 @@
     left: 0%;
     top: 58%;
     font-size: 1rem;
-    font-weight: 300;
     font-family: 'Roboto',sans-serif;
     width: 100%;
     text-align: center;
@@ -61,7 +60,7 @@
     left: 0%;
     top: 67%;
     font-size: 1.2rem;
-    font-weight: 500;
+
     font-family: 'Roboto',sans-serif;
     width: 100%;
     text-align: center;
@@ -72,7 +71,7 @@
     left: 0%;
     top: 70%;
     font-size: 1.2rem;
-    font-weight: 500;
+
     font-family: 'Roboto',sans-serif;
     width: 100%;
     text-align: center;
@@ -82,7 +81,7 @@
     position: absolute;
     left: 0%;
     top: 44%;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 500;
     font-family: 'Roboto',sans-serif;
     width: 100%;
@@ -96,24 +95,63 @@
 .firma_david img{
     position: absolute;
     right: 30%;
-    top: 77%;
+    top: 76%;
+    font-family: 'Roboto',sans-serif;
 }
 
 .firma_david .name{
     position: absolute;
     right: 20%;
     top: 88%;
-
+    font-family: 'Roboto',sans-serif;
+    border-top: 2px solid #1cb7ff;
 }
 .firma_david .cargo{
     position: absolute;
     right: 20%;
     top: 91%;
+    font-family: 'Roboto',sans-serif;
+}
+.firma_david .extra{
+    position: absolute;
+    right: 23%;
+    top: 93%;
+    font-size: 1rem;
+    font-family: 'Roboto',sans-serif;
+    margin-top: .2rem;
+}
+.firma_trainer img{
+    position: absolute;
+    left: 23%;
+    top: 76%;
+    font-family: 'Roboto',sans-serif;
+}
+
+.firma_trainer .name{
+    position: absolute;
+    left: 15%;
+    top: 88%;
+    font-family: 'Roboto',sans-serif;
+    border-top:2px solid #1cb7ff;
+}
+.firma_trainer .cargo{
+    position: absolute;
+    left: 15%;
+    top: 91%;
+    font-family: 'Roboto',sans-serif;
+}
+.firma_trainer .extra{
+    position: absolute;
+    left: 19%;
+    font-size: 1rem;
+    top: 93%;
+    font-family: 'Roboto',sans-serif;
+    margin-top: .2rem;
 }
 h1 {
   position: relative;
   font-size: 65px;
-  font-family: 'Great Vibes', cursive;
+    font-family: 'Roboto',sans-serif;
   text-align: center;
   top: 90px;
 }

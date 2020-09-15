@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataTables\TrainersDatatable;
 use App\Trainer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TrainersController extends Controller
 {
@@ -40,6 +41,8 @@ class TrainersController extends Controller
         $request->validate([
             "firstname" => "required",
             "lastname" => "required",
+            "profesion" => "required",
+            "firma" => "required",
             "dni" => "required|max:8|unique:trainers",
             "email" => "required|email|unique:trainers",
 
@@ -47,6 +50,12 @@ class TrainersController extends Controller
 
         $data = $request->all();
 
+        if ($request->hasFile("firma")) {
+            $urlimage = $request->file("firma")->store("firmas","public");
+            $data["firma"] = Storage::url($urlimage);
+        } else {
+            unset($data["image"]);
+        }
 
         $trainer = Trainer::create($data);
 

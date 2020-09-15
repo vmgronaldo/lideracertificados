@@ -49,7 +49,7 @@
                                                       href="{{route('courses.index')}}">Cursos</a></li>
                 <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="{{route('participants.index')}}">Participantes</a>
                 </li>
-                <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="{{route('certificates.store')}}">Crear
+                <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="{{route('certificates.create')}}">Crear
                         Certificado</a></li>
             </ul>
             <ul class="c-header-nav ml-auto mr-4">

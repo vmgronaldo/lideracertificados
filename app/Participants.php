@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 
 class Participants extends Model
 {
+    use Notifiable;
     protected $fillable = [
         'firstname',
         'lastname',

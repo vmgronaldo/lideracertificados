@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Certificates;
 use App\Course;
+use App\DataTables\CertificatesDatatable;
+use App\Notifications\SeendCertificates;
 use App\Participants;
 use PDF;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class CertificatesController extends Controller
 {
@@ -16,9 +19,9 @@ class CertificatesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(CertificatesDatatable $datatable)
     {
-        return view('certificates.index');
+        return $datatable->render('certificates.index');
     }
 
     /**
@@ -50,14 +53,16 @@ class CertificatesController extends Controller
 
         //$data = $request->all();
         $user_id = Participants::where('id', $request->get('model_id'))->first();
-        $certificates = new Certificates();
-        $certificates->model_type = Participants::class;
-        $certificates->model_id = $user_id->id;
-        $certificates->course_id = $request->get('course_id');
-        $certificates->date = $request->get('date');
-        $certificates->save();
-        return $certificates;
+        $certificate = new Certificates();
+        $certificate->model_type = Participants::class;
+        $certificate->model_id = $user_id->id;
+        $certificate->course_id = $request->get('course_id');
+        $certificate->date = $request->get('date');
+        $certificate->save();
+        $certificate->model->notify(new SeendCertificates(compact('certificate')));
 
+        //return $certificate;
+        return redirect()->route("certificates.index")->withFlash("Certificado registrado");
     }
 
     /**

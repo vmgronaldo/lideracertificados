@@ -76,18 +76,14 @@ class CalendarController extends Controller
             'course_id' => 'required',
             'event_name' => 'required',
             'start_date' => 'required',
-            'end_date' => 'required',
         ];
         $messages = [
             'event_name.required' => 'El titulo es requerido',
             'start_date.required' => 'Fecha inicio requerido',
-            'end_date.required' => 'Fecha fin requerido',
         ];
 
         $request->validate($rules, $messages);
         //$new_calendar = Calendar::create($request->all());
-
-
         $new_calendar = Calendar::create($request->all());
 
         return response()->json([

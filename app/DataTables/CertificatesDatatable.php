@@ -2,7 +2,8 @@
 
 namespace App\DataTables;
 
-use App\Trainer;
+
+use App\Certificates;
 use Carbon\Carbon;
 use Illuminate\Support\HtmlString;
 use Yajra\DataTables\Html\Button;
@@ -11,7 +12,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class TrainersDatatable extends DataTable
+class CertificatesDatatable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -23,18 +24,18 @@ class TrainersDatatable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->editColumn('firstname', function ($item){
-                return new HtmlString('<span class="badge">'.$item->firstname.' '.$item->lastname.'</span>');
+            ->editColumn('model_id', function ($item){
+                return new HtmlString('<span class="badge">'.$item->model->firstname.' '.$item->model->lastname.'</span>');
+            })
+            ->editColumn('course_id', function ($item){
+                return new HtmlString('<span class="badge">'.$item->course->curso.'</span>');
             })
             ->editColumn('created_at', function ($item){
-                return new HtmlString('<span class="badge">'.Carbon::parse($item->created_at)->format('Y-m-d').'</span>');
-            })
-            ->editColumn('firma', function ($item){
-                return new HtmlString('<img width="80" src="'.url($item->firma).'">');
+                return new HtmlString('<span class="badge">'.$item->created_at->diffForHumans().'</span>');
             })
             ->addColumn('action', function ($item) {
                 $button ='
-                          <a class="btn btn-primary" href="' . route('trainers.show', $item->id) . '">
+                          <a class="btn btn-primary" target="_blank" href="' . route('certificates.show', $item->id) . '">
                           <i class="fa fa-eye" aria-hidden="true"></i>
                           </a>';
                 return $button;
@@ -44,10 +45,10 @@ class TrainersDatatable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\TrainersDatatable $model
+     * @param \App\CertificatesDatatable $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Trainer $model)
+    public function query(Certificates $model)
     {
         return $model->newQuery();
     }
@@ -60,12 +61,12 @@ class TrainersDatatable extends DataTable
     public function html()
     {
         return $this->builder()
-                    ->setTableId('trainersdatatable-table')
+                    ->setTableId('certificatesdatatable-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->parameters([
+                'responsive' => true,
                 'paging' => true,
-                'scrollX'=> false,
                 'searching' => true,
                 'info' => true,
                 'searchDelay' => 150,
@@ -75,13 +76,13 @@ class TrainersDatatable extends DataTable
             ])
             ->dom('Bfrtip')
             ->orderBy(1)
-            ->buttons(
-                Button::make('create')->text('<i class="fa fa-plus"></i> Crear'),
-                Button::make('excel')->text('<i class="fa fa-file-excel-o"></i> Exportar'),
-                Button::make('print')->text('<i class="fa fa-print"></i> Imprimir'),
-                Button::make('reload')->text('<i class="fa fa-reload"></i> Refrescar'),
-                Button::make('reset')->text('<i class="fa fa-undo"></i> Resetear')
-            );
+                    ->buttons(
+                        Button::make('create')->text('<i class="fa fa-plus"></i> Crear'),
+                        Button::make('excel')->text('<i class="fa fa-file-excel-o"></i> Exportar'),
+                        Button::make('print')->text('<i class="fa fa-print"></i> Imprimir'),
+                        Button::make('reload')->text('<i class="fa fa-reload"></i> Refrescar'),
+                        Button::make('reset')->text('<i class="fa fa-undo"></i> Resetear')
+                    );
     }
 
     /**
@@ -93,16 +94,15 @@ class TrainersDatatable extends DataTable
     {
         return [
             Column::computed('action')
-                ->exportable(false)
-                ->printable(false)
-                ->width(100)
-                ->addClass('text-center')->title('Ver'),
-            Column::make('id'),
-            Column::make('firstname')->title('Nombre(s)'),
-            Column::make('dni'),
-            Column::make('email')->title('Correo'),
-            Column::make('firma')->title('Firma'),
-            Column::make('created_at')->title('F.Creación'),
+                  ->exportable(false)
+                  ->printable(false)
+                  ->width(60)
+                  ->addClass('text-center')->title('Acción'),
+            Column::make('id')->title('Codigo'),
+            Column::make('model_id')->title('Participante'),
+            Column::make('course_id')->title('Curso'),
+            Column::make('date')->title('F.Creación'),
+            Column::make('created_at')->title('Hace'),
         ];
     }
 
@@ -113,6 +113,6 @@ class TrainersDatatable extends DataTable
      */
     protected function filename()
     {
-        return 'Trainers_' . date('YmdHis');
+        return 'Certificates_' . date('YmdHis');
     }
 }

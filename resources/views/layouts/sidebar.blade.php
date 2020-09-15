@@ -28,7 +28,8 @@
                 <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route('certificates.create')}}"><i class="fa fa-address-card mr-2"></i> Crear Certificado</a></li>
             </ul>
         </li>
-
+        <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route('calendar.index')}}">
+                <i class="fa fa-calendar-o mr-2"></i> Calendario</a></li>
     </ul>
     <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
 </div>

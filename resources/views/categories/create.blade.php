@@ -44,15 +44,7 @@
                                         <input type="text" name="name" placeholder="Nombre de categoria" class="form-control"
                                                id="name">
                                     </div>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                               <i class="fa fa-user"></i>
-                                </span>
-                                        </div>
-                                        <input type="email" name="email" placeholder="Email" class="form-control"
-                                               id="email">
-                                    </div>
+
                                     <button class="btn btn-block btn-primary" type="submit">Crear categoria</button>
                                 </div>
                             </div>

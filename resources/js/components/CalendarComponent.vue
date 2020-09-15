@@ -13,28 +13,7 @@
         },
         data() {
             return {
-                pickerOptions: {
-                    shortcuts: [{
-                        text: 'Hoy',
-                        onClick(picker) {
-                            picker.$emit('pick', new Date());
-                        }
-                    }, {
-                        text: 'Ayer',
-                        onClick(picker) {
-                            const date = new Date();
-                            date.setTime(date.getTime() - 3600 * 1000 * 24);
-                            picker.$emit('pick', date);
-                        }
-                    }, {
-                        text: 'Hace una semana',
-                        onClick(picker) {
-                            const date = new Date();
-                            date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
-                            picker.$emit('pick', date);
-                        }
-                    }]
-                },
+
                 calendarPlugins: [dayGridPlugin],
                 events: "",
                 items: [],
@@ -47,7 +26,6 @@
                     event_name: "",
                     descripcion: "",
                     start_date: "",
-                    end_date: ""
                 },
                 addingMode: true,
                 indexToUpdate: ""
@@ -104,7 +82,7 @@
 
             showEvent(arg) {
                 this.addingMode = false;
-                const {id, title, start, end} = this.events.find(
+                const {id, title, start} = this.events.find(
                     event => event.id === +arg.event.id
                 );
                 this.indexToUpdate = id;
@@ -112,7 +90,6 @@
                     user_id: this.user,
                     event_name: title,
                     start_date: start,
-                    end_date: end
                 };
             },
             updateEvent() {
@@ -213,34 +190,25 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Inicio</label>
-                                        <el-date-picker type="datetime" id="start_date" placeholder="Fecha inicio"
-                                                        value-format="yyyy/MM/DD hh:mm:ss" :picker-options="pickerOptions"   v-model="newEvent.start_date" style="width: 100%;"></el-date-picker>
+
+                                        <input type="date"  v-model="newEvent.start_date" class="form-control">
                                         <div v-if="errors && errors.start_date" class="text-danger">{{ errors.start_date[0] }}</div>
 
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Fin</label>
-                                        <el-date-picker type="datetime" id="end_date" placeholder="Fecha fin"
-                                                        value-format="yyyy/MM/DD hh:mm:ss"
-                                                        :picker-options="pickerOptions"   v-model="newEvent.end_date" style="width: 100%;"></el-date-picker>
-                                        <div v-if="errors && errors.end_date" class="text-danger">{{ errors.end_date[0] }}</div>
 
-                                    </div>
-                                </div>
                                 <div class="col-md-6 mb-4 mt-2" v-if="addingMode">
                                     <button class="btn btn-sm btn-primary" @click="addNewEvent">Guardar</button>
                                 </div>
                                 <div class="col-12 mt-3" v-else>
                                     <div class="row">
-                                        <button class="btn btn-sm btn-success ml-2 col-2" @click="updateEvent"><i
+                                        <button class="btn btn-sm btn-success ml-2 mb-2 col-12" @click="updateEvent"><i
                                             class="fa fa-edit"></i> Actualizar
                                         </button>
-                                        <button class="btn btn-sm btn-danger ml-2 col-2" @click="deleteEvent"><i
+                                        <button class="btn btn-sm btn-danger ml-2  mb-2 col-12" @click="deleteEvent"><i
                                             class="fa fa-trash"></i> Borrar
                                         </button>
-                                        <button class="btn btn-sm btn-light ml-2 col-2" @click="addingMode = !addingMode"><i
+                                        <button class="btn btn-sm btn-light ml-2 col-12" @click="addingMode = !addingMode"><i
                                             class="fa fa-close"></i> Cancelar
                                         </button>
                                     </div>
