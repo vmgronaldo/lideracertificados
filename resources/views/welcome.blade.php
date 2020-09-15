@@ -4,10 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Verificar Certiciados | Lidera EHSQ</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Styles -->
         <style>
@@ -65,7 +69,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+          <!--  @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -77,23 +81,29 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+            @endif-->
 
-            <div class="content">
+            <div class="container text-center justify-content-center">
                 <div class="title m-b-md">
-                    Laravel
+                    <img src="{{asset('images/logo-b.png')}}" alt="Lidera">
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">{{ __('Verificar Certiciado | En línea') }}</div>
+
+                            <div class="card-body">
+                                <form class="d-inline" method="GET" action="{{ route('participante.index') }}">
+                                    @csrf
+                                    <input type="text" autocomplete="off" class="form-control" name="q">
+                                    <button type="submit" class="btn btn-primary mt-3">{{ __('Buscar...') }}</button>.
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </body>

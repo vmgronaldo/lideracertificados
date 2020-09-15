@@ -31,3 +31,9 @@ Route::middleware(["auth"])->group(function() {
     Route::resource('certificates', 'CertificatesController');
     //Route::post('participants/certificates/', 'ParticipansController@storeCertificate')->name('certificate.store');
 });
+
+
+Route::prefix('cliente')->group(function() {
+    Route::resource('participante', 'ClienteController');
+    Route::resource('certificados', 'ClienteCertificatesController');
+});
