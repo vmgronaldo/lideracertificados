@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Certificates;
 use App\Course;
 use App\DataTables\CertificatesDatatable;
+use App\Http\Requests\Common\Import as ImportRequest;
+use App\Imports\Certificates as Import;
 use App\Notifications\SeendCertificates;
 use App\Participants;
+use Maatwebsite\Excel\Facades\Excel;
 use PDF;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -118,4 +121,29 @@ class CertificatesController extends Controller
     {
         //
     }
+
+
+
+
+    /**
+     * Import the specified resource.
+     *
+     * @param  ImportRequest  $request
+     *
+     * @return Response
+     */
+    public function import(ImportRequest $request)
+    {
+
+    //   return $request;
+        Excel::import(new Import(), $request->file('import'));
+
+        $message = "Certfificados importados!";
+
+        flash($message)->success();
+
+        return redirect()->route('certificates.index');
+    }
+
+
 }

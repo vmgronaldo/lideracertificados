@@ -12,7 +12,8 @@
     </div>
     @include('flash::message')
     <div class="container" id="certificado">
-
+        <a href="{{route("import.create",["certificates"])}}"
+           class="btn btn-success">Importar Certificados</a>
         <div class="row justify-content-center">
 
             @if ($errors->any())

@@ -30,6 +30,11 @@ Route::middleware(["auth"])->group(function() {
     Route::resource('courses', 'CoursesController');
     Route::resource('certificates', 'CertificatesController');
     //Route::post('participants/certificates/', 'ParticipansController@storeCertificate')->name('certificate.store');
+    /*Import*/
+    Route::get('import/{type}', 'Common\Import@create')->name('import.create');
+    Route::post('certificates/import', 'CertificatesController@import')->name('certificates.import');
+
+
 });
 
 
