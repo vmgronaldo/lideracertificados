@@ -11,8 +11,8 @@
                                 <div class="card text-white bg-gradient-primary">
                                     <div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
                                         <div>
-                                            <div class="text-value-lg">9.823</div>
-                                            <div>Members online</div>
+                                            <div class="text-value-lg">{{$certificados}}</div>
+                                            <div>Certificados</div>
                                         </div>
                                         <div class="btn-group">
                                             <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,8 +33,8 @@
                                 <div class="card text-white bg-gradient-info">
                                     <div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
                                         <div>
-                                            <div class="text-value-lg">9.823</div>
-                                            <div>Members online</div>
+                                            <div class="text-value-lg">{{$participantes}}</div>
+                                            <div>Participantes</div>
                                         </div>
                                         <div class="btn-group">
                                             <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -55,8 +55,8 @@
                                 <div class="card text-white bg-gradient-warning">
                                     <div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
                                         <div>
-                                            <div class="text-value-lg">9.823</div>
-                                            <div>Members online</div>
+                                            <div class="text-value-lg">{{$cursos}}</div>
+                                            <div>Cursos / Capacitaciones</div>
                                         </div>
                                         <div class="btn-group">
                                             <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,8 +77,8 @@
                                 <div class="card text-white bg-gradient-danger">
                                     <div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
                                         <div>
-                                            <div class="text-value-lg">9.823</div>
-                                            <div>Members online</div>
+                                            <div class="text-value-lg">{{$profesores}}</div>
+                                            <div>Profesores</div>
                                         </div>
                                         <div class="btn-group">
                                             <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

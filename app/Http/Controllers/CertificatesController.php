@@ -83,7 +83,9 @@ class CertificatesController extends Controller
         $ano  = Carbon::now()->format('Y');
 
         $filename = 'Certificado(s)';
-        $pdf = PDF::loadView('certificates.show',['certificate'=>$certificate,'today'=>$today,'filename'=>$filename,'ano'=>$ano])->setPaper('a4', 'landscape');
+
+        //return view('certificates.show',compact('certificate','today','ano'));
+           $pdf = PDF::loadView('certificates.show',['certificate'=>$certificate,'today'=>$today,'filename'=>$filename,'ano'=>$ano])->setPaper('a4', 'landscape');
         return $pdf->stream($filename.'.pdf');
         //return $pdf->download($filename.'.pdf');
     }

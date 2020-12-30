@@ -30,8 +30,9 @@ class CalendarController extends Controller
             return array(
                 'id' => $item->id,
                 'title' => $item->event_name,
-                'start' => $item->start_date,
-                'end' => $item->end_date
+                'start' => optional($item->start_date)->format('Y-m-d')  ,
+                'end' =>  optional($item->fecha_fin)->format('Y-m-d'),
+                'course_id' => $item->course_id,
             );
         });
 

@@ -5,6 +5,7 @@ namespace App\Imports;
 use App\Certificates as Model;
 use App\Abstracts\Import;
 use App\Http\Requests\Common\Certificates as Request;
+use App\Notifications\SeendCertificates;
 
 class Certificates extends import
 {
@@ -21,8 +22,10 @@ class Certificates extends import
         $row['model_id'] = $this->getModelId($row);
         $row['date'] = $this->getDate($row);
 
-       // var_dump($row);
+       // var_dump($row);->send(new NotInmuebleSeend($details));
         //exit();
+        //$this->getModelId($row)->notify(new SeendCertificates(compact('certificate')));
+        //$this->getModelId($row)->notify(new SeendCertificates(compact('certificate')));
 
         return $row;
     }

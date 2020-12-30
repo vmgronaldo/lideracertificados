@@ -26,7 +26,7 @@ class CreateCalendarsTable extends Migration
             $table->string('event_name');
             $table->string('descripcion')->nullable();
             $table->date('start_date')->nullable();
-            $table->date('end_date')->nullable();
+            $table->date('fecha_fin')->nullable();
             $table->timestamps();
         });
     }

@@ -26,6 +26,7 @@
                     event_name: "",
                     descripcion: "",
                     start_date: "",
+                    fecha_fin: "",
                 },
                 addingMode: true,
                 indexToUpdate: ""
@@ -82,7 +83,7 @@
 
             showEvent(arg) {
                 this.addingMode = false;
-                const {id, title, start} = this.events.find(
+                const {id,course_id, title, start, end} = this.events.find(
                     event => event.id === +arg.event.id
                 );
                 this.indexToUpdate = id;
@@ -90,6 +91,8 @@
                     user_id: this.user,
                     event_name: title,
                     start_date: start,
+                    fecha_fin: end,
+                    course_id: course_id,
                 };
             },
             updateEvent() {
@@ -173,7 +176,7 @@
                             <div class="form-group">
                                 <select name="course_id" id="course_id" class="form-control " placeholder="Seleccionar"  v-model="newEvent.course_id" >
                                     <option value="">Seleccionar curso:</option>
-                                    <option :value="item.id" v-for="item in items" :key="item.name">{{item.curso}}</option>
+                                    <option :value="item.id" v-for="item in items"    :key="item.name">{{item.curso}}</option>
                                 </select>
                                 <div v-if="errors && errors.course_id" class="text-danger">{{ errors.course_id[0] }}</div>
                             </div>
@@ -189,14 +192,22 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Inicio</label>
+                                        <label>Fecha Inicio:</label>
 
                                         <input type="date"  v-model="newEvent.start_date" class="form-control">
                                         <div v-if="errors && errors.start_date" class="text-danger">{{ errors.start_date[0] }}</div>
 
                                     </div>
                                 </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Fecha Fin:</label>
 
+                                        <input type="date"  v-model="newEvent.fecha_fin" class="form-control">
+                                        <div v-if="errors && errors.fecha_fin" class="text-danger">{{ errors.fecha_fin[0] }}</div>
+
+                                    </div>
+                                </div>
                                 <div class="col-md-6 mb-4 mt-2" v-if="addingMode">
                                     <button class="btn btn-sm btn-primary" @click="addNewEvent">Guardar</button>
                                 </div>

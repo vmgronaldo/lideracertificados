@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Certificates;
+use App\Course;
+use App\Participants;
+use App\Trainer;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +27,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $certificados = Certificates::all()->count();
+        $cursos = Course::all()->count();
+        $profesores = Trainer::all()->count();
+        $participantes = Participants::all()->count();
+        return view('home',compact('certificados','cursos','profesores','participantes'));
+
     }
 }

@@ -14,16 +14,22 @@ class Calendar extends Model
         "descripcion",
         "event_name",
         "start_date",
-        "end_date",
+        "fecha_fin",
     ];
 
 
-    public function getStartDateAttribute($date)
+    public function getStartDateAttribute($start_date)
     {
-        return new Date($date);
+        return new Date($start_date);
     }
 
-    public function user()
+
+    public function getFechaFinAttribute($fecha_fin)
+    {
+        return new Date($fecha_fin);
+    }
+
+   public function user()
     {
         return $this->belongsTo(User::class);
     }
