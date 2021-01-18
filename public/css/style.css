@@ -126,7 +126,7 @@
 
 .firma_trainer .name{
     position: absolute;
-    left: 16.5%;
+    left: 13.5%;
     top: 86%;
     font-family: 'Roboto',sans-serif;
     border-top:2px solid #1cb7ff;
@@ -170,7 +170,15 @@
     font-family: 'Roboto',sans-serif;
     margin-top: .2rem;
 }
-
+.firma_trainer .cip{
+    position: absolute;
+    left: 19%;
+    font-size: .9rem;
+    font-weight: 400;
+    top: 94%;
+    font-family: 'Roboto',sans-serif;
+    margin-top: .2rem;
+}
 
 h1 {
   position: relative;

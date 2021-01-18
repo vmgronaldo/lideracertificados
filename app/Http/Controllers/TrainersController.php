@@ -81,9 +81,10 @@ class TrainersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Trainer $trainer)
     {
-        //
+        return view('trainers.edit', compact('trainer'));
+
     }
 
     /**
@@ -93,9 +94,20 @@ class TrainersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Trainer $trainer)
     {
-        //
+        $data = $request->all();
+        if ($request->hasFile("firma")) {
+            $urlimage = $request->file("firma")->store("firmas","public");
+            $data["firma"] = Storage::url($urlimage);
+        } else {
+            unset($data["image"]);
+        }
+        $trainer->update($data);
+
+        return redirect()->route("trainers.edit", $trainer)->withFlash("Trainer Actualizado");
+
+
     }
 
     /**

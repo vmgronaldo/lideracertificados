@@ -34,7 +34,7 @@ class TrainersDatatable extends DataTable
             })
             ->addColumn('action', function ($item) {
                 $button ='
-                          <a class="btn btn-primary" href="' . route('trainers.show', $item->id) . '">
+                          <a class="btn btn-primary" href="' . route('trainers.edit', $item->id) . '">
                           <i class="fa fa-eye" aria-hidden="true"></i>
                           </a>';
                 return $button;

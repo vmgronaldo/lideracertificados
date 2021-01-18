@@ -30,6 +30,7 @@
         <p class="name">{{$certificate->course->trainer->firstname}} {{$certificate->course->trainer->lastname}}</p>
         <p class="cargo"><strong>{{$certificate->course->trainer->profesion}}</strong></p>
         <p class="extra"><strong>CAPACITADOR</strong></p>
+        <p class="cip"><strong>CIP: {{$certificate->course->trainer->cip}}</strong></p>
     </div>
 
 
