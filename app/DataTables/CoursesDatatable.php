@@ -45,7 +45,7 @@ class CoursesDatatable extends DataTable
             })
             ->addColumn('action', function ($item) {
                 $button ='
-                          <a class="btn btn-primary" href="' . route('courses.show', $item->id) . '">
+                          <a class="btn btn-primary" href="' . route('courses.edit', $item->id) . '">
                           <i class="fa fa-eye" aria-hidden="true"></i>
                           </a>';
                 return $button;
