@@ -16,11 +16,10 @@
     <p class="capacitacion">Por haber participado satisfactoriamente en la capacitación de:</p>
     <p class="curso"><strong>“{{$certificate->course->curso}}”</strong></p>
 
-    @if ($certificate->course->calendar)
-        <p class="fecha">Realizado el {{ optional($certificate->course->calendar->start_date)->format('D')}} {{optional($certificate->course->calendar->start_date)->format('d')}} de {{optional($certificate->course->calendar->start_date)->format('M')}} del {{optional($certificate->course->calendar)->start_date->format('Y')}} por la empresa Lidera EHSQ.</p>
+    @if ($certificate->course->calendar->fin)
+        <p class="fecha">Realizado el {{ optional($certificate->course->calendar->start_date)->format('D')}} {{optional($certificate->course->calendar->start_date)->format('d')}} {{optional($certificate->course->calendar->fecha_fin) ? 'al':''}} {{optional($certificate->course->calendar->fecha_fin)->format('D')}} {{optional($certificate->course->calendar->fecha_fin)->format('d')}}  de {{optional($certificate->course->calendar->fecha_fin)->format('M')}}  del {{optional($certificate->course->calendar)->start_date->format('Y')}} por la empresa Lidera EHSQ.</p>
     @else
-        <p class="fecha">Realizado el {{ optional($certificate->course->calendar->start_date)->format('D')}} {{optional($certificate->course->calendar->start_date)->format('d')}}  {{$certificate->course->calendar->fecha_fin ? 'al':'' }} {{ optional($certificate->course->calendar->fecha_fin)->format('D')}} {{optional($certificate->course->calendar->fecha_fin)->format('d')}} de {{optional($certificate->course->calendar->start_date)->format('M')}} del {{optional($certificate->course->calendar)->start_date->format('Y')}} por la empresa Lidera EHSQ.</p>
-
+        <p class="fecha">Realizado el {{ optional($certificate->course->calendar->start_date)->format('D')}} {{optional($certificate->course->calendar->start_date)->format('d')}} de {{optional($certificate->course->calendar->start_date)->format('M')}} del {{optional($certificate->course->calendar)->start_date->format('Y')}} por la empresa Lidera EHSQ.</p>
     @endif
 
     <p class="duracion">Con una duración de {{$certificate->course->time}} {{$certificate->course->extension}} académicas.</p>

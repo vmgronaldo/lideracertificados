@@ -106,14 +106,14 @@
 .firma_david img{
     position: absolute;
     right: 35%;
-    top: 77%;
+    top: 79%;
     font-family: 'Roboto',sans-serif;
 }
 
 .firma_trainer img{
     position: absolute;
-    left: 23%;
-    top: 77%;
+    left: 24%;
+    top: 79%;
 }
 
 .firma_david .name{
@@ -126,7 +126,7 @@
 
 .firma_trainer .name{
     position: absolute;
-    left: 13.5%;
+    left: 14%;
     top: 86%;
     font-family: 'Roboto',sans-serif;
     border-top:2px solid #1cb7ff;

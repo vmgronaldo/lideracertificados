@@ -85,7 +85,17 @@ class CalendarController extends Controller
 
         $request->validate($rules, $messages);
         //$new_calendar = Calendar::create($request->all());
-        $new_calendar = Calendar::create($request->all());
+
+
+        $data=$request->all();
+
+        if ($request->get("fecha_fin") == null) {
+            $data["fin"] = 0;
+        }else{
+            $data["fin"] = 1;
+        }
+
+        $new_calendar = Calendar::create($data);
 
         return response()->json([
             'data' => new CalendarReusorce($new_calendar),
@@ -125,7 +135,19 @@ class CalendarController extends Controller
      */
     public function update(Request $request,Calendar $calendar)
     {
-        $calendar->update($request->all());
+
+
+        $data=$request->all();
+
+        if ($request->get("fecha_fin") == null) {
+            $data["fin"] = 0;
+        }else{
+            $data["fin"] = 1;
+        }
+
+
+
+        $calendar->update($data);
         return response()->json([
             'data' => new CalendarReusorce($calendar),
             'message' => 'Successfully updated event!',

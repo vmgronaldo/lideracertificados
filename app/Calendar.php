@@ -15,6 +15,7 @@ class Calendar extends Model
         "event_name",
         "start_date",
         "fecha_fin",
+        "fin",
     ];
 
 
