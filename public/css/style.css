@@ -144,11 +144,10 @@
 
 .firma_trainer .cargo{
     position: absolute;
-    left: 16%;
+    left: 15%;
     top: 90%;
     font-size: .9rem;
     font-weight: 400;
-
     font-family: 'Roboto',sans-serif;
 }
 .firma_david .extra{
@@ -163,7 +162,7 @@
 
 .firma_trainer .extra{
     position: absolute;
-    left: 18%;
+    left: 17%;
     font-size: .9rem;
     font-weight: 400;
     top: 92%;
@@ -172,7 +171,7 @@
 }
 .firma_trainer .cip{
     position: absolute;
-    left: 19%;
+    left: 18%;
     font-size: .9rem;
     font-weight: 400;
     top: 94%;
