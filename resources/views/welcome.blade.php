@@ -13,6 +13,19 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        <meta property="og:title"
+              content="Verificar Certificados | Lidera EHSQ">
+        <meta property="og:locale" content="es">
+        <meta property="og:site_name" content=" Lidera EHSQ">
+        <meta property="og:url" content="https://certificados.lideraehsq.com/">
+        <meta property="og:type" content="website"/>
+        <meta property="og:description"
+              content="LINK PARA VISUALIZAR EL CERTIFICADO DE NUESTRA CAPACITACIÓN (Solo debe ingresar con su número de DNI o C.E)">
+        <meta property="og:image" content="{{asset('img/portada-certificados.jpg')}}"/>
+        <meta property="og:image:width" content="800"/>
+        <meta property="og:image:height" content="700"/>
+        <link rel="canonical" href="https://certificados.lideraehsq.com/">
+
         <!-- Styles -->
         <style>
             html, body {
