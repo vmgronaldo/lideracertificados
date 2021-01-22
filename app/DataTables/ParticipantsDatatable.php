@@ -27,10 +27,14 @@ class ParticipantsDatatable extends DataTable
                 return new HtmlString('<span class="badge">'.Carbon::parse($item->created_at)->format('Y-m-d').'</span>');
             })
             ->addColumn('action', function ($item) {
-                    $button ='
-                          <a class="btn btn-primary" href="' . route('participants.show', $item->id) . '">
+                    $button = ' <a class="btn btn-primary" title="Ver sus certificados" href="' . route('participants.show', $item->id) . '">
                           <i class="fa fa-eye" aria-hidden="true"></i>
                           </a>';
+                    $button .= '
+                              <a class="btn btn-primary" title="editar" href="' . route('participants.edit', $item->id) . '">
+                              <i class="fa fa-edit" aria-hidden="true"></i>
+                              </a>';
+
                 return $button;
             });
     }

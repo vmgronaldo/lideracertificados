@@ -6,6 +6,7 @@ use App\Certificates;
 use App\DataTables\ParticipantsDatatable;
 use App\Participants;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ParticipansController extends Controller
 {
@@ -115,9 +116,10 @@ class ParticipansController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Participants $participant)
     {
-        //
+        return view('participants.edit', compact('participant'));
+
     }
 
     /**
@@ -127,9 +129,14 @@ class ParticipansController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Participants $participant)
     {
-        //
+        $data = $request->all();
+
+        $participant->update($data);
+
+        return redirect()->route("participants.edit", $participant)->withFlash("Participante Actualizado");
+
     }
 
     /**

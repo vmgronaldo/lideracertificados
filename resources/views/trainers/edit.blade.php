@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <form class="form-participants"  enctype="multipart/form-data"  method="POST" action="{{route('trainers.update',$trainer->id)}}">
                             {{csrf_field()}} {{method_field('PUT')}}
-                            @csrf
+
                             <div class="card">
                                 <div class="card-header">Editar profesor</div>
                                 <div class="card-body">
