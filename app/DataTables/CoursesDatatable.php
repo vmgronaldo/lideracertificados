@@ -112,6 +112,7 @@ class CoursesDatatable extends DataTable
             Column::make('trainer_id')->title('Profesor'),
             Column::make('curso')->title('Curso'),
             Column::make('category_id')->title('Categoría'),
+            Column::make('type')->title('Tipo'),
             Column::make('time')->title('Duración'),
             Column::make('created_at')->title('F.Creación'),
 

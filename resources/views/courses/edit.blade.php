@@ -35,23 +35,71 @@
                             <div class="card">
                                 <div class="card-header">Editar Curso</div>
                                 <div class="card-body">
-
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
                                     <span class="input-group-text">
                                                <i class="fa fa-user"></i>
                                 </span>
+                                            </div>
+                                            <select name="trainer_id" id="trainer_id" class="form-control select2">
+                                                <option value="">Selecionar profesor</option>
+                                                @foreach($trainers as $trainer)
+                                                    <option
+                                                        value="{{$trainer->id}}" {{old('trainer_id',$trainer->id) == $course->trainer_id ? 'selected':'' }}>{{$trainer->firstname}} {{$trainer->lastname}}</option>
+                                                @endforeach
+                                            </select>
+
+
                                         </div>
-                                        <select name="trainer_id" id="trainer_id" class="form-control select2">
-                                            <option value="">Selecionar profesor</option>
-                                            @foreach($trainers as $trainer)
-                                                <option
-                                                    value="{{$trainer->id}}" {{old('trainer_id',$trainer->id) == $course->trainer_id ? 'selected':'' }}>{{$trainer->firstname}} {{$trainer->lastname}}</option>
-                                            @endforeach
-                                        </select>
-
-
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                                   <i class="fa fa-list-alt"></i>
+                                                    </span>
+                                            </div>
+                                            <select name="type" id="type"
+                                                    class="form-control">
+
+                                                @if ($course->type === "Capacitación")
+                                                    <option value="">Selecionar Tipo</option>
+                                                    <option
+                                                        value="Capacitación" selected>Capacitación
+                                                    </option>
+                                                    <option
+                                                        value="Curso">Curso
+                                                    </option>
+                                                    @elseif ($course->type === "Curso")
+                                                    <option value="">Selecionar Tipo</option>
+                                                    <option
+                                                        value="Capacitación">Capacitación
+                                                    </option>
+                                                    <option
+                                                        value="Curso" selected>Curso
+                                                    </option>
+                                                    @else
+
+                                                    <option value="" selected>Selecionar Tipo</option>
+                                                    <option
+                                                        value="Capacitación">Capacitación
+                                                    </option>
+                                                    <option
+                                                        value="Curso">Curso
+                                                    </option>
+
+                                                @endif
+
+
+                                            </select>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
 
                                     <div class="row">
                                         <div class="col-md-4">

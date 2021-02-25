@@ -4,7 +4,7 @@
     <div class="c-subheader mb-3 pl-3">
         <!-- Breadcrumb-->
         <ol class="breadcrumb border-0 m-0">
-            <li class="breadcrumb-item"><a href="{{route('home')}}">Inicio</a> </li>
+            <li class="breadcrumb-item"><a href="{{route('home')}}">Inicio</a></li>
             <li class="breadcrumb-item"><a href="{{route('courses.index')}}">Curso</a></li>
             <li class="breadcrumb-item active">Crear</li>
             <!-- Breadcrumb Menu-->
@@ -35,33 +35,57 @@
                             <div class="card">
                                 <div class="card-header">Crear Curso</div>
                                 <div class="card-body">
-
-                                    <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                               <i class="fa fa-user"></i>
-                                </span>
-                                            </div>
-                                            <select name="trainer_id" id="trainer_id" class="form-control select2">
-                                                <option value="">Selecionar profesor</option>
-                                                @foreach($trainers as $trainer)
-                                                    <option
-                                                        value="{{$trainer->id}}" {{old('trainer_id') == $trainer->id ? 'selected':'' }}>{{$trainer->firstname}} {{$trainer->lastname}}</option>
-                                                @endforeach
-                                            </select>
-
-
-                                        </div>
-
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
-                                               <i class="fa fa-list-alt"></i>
+                                               <i class="fa fa-user"></i>
                                 </span>
                                                 </div>
-                                                <select name="category_id" id="category_id" class="form-control select2">
+                                                <select name="trainer_id" id="trainer_id" class="form-control select2">
+                                                    <option value="">Selecionar profesor</option>
+                                                    @foreach($trainers as $trainer)
+                                                        <option
+                                                            value="{{$trainer->id}}" {{old('trainer_id') == $trainer->id ? 'selected':'' }}>{{$trainer->firstname}} {{$trainer->lastname}}</option>
+                                                    @endforeach
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                                   <i class="fa fa-list-alt"></i>
+                                                    </span>
+                                                </div>
+                                                <select name="type" id="type"
+                                                        class="form-control">
+                                                    <option value="">Selecionar Tipo</option>
+                                                    <option
+                                                        value="Capacitación">Capacitación
+                                                    </option>
+                                                    <option
+                                                        value="Curso">Curso
+                                                    </option>
+                                                </select>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                                   <i class="fa fa-list-alt"></i>
+                                                    </span>
+                                                </div>
+                                                <select name="category_id" id="category_id"
+                                                        class="form-control select2">
                                                     <option value="">Selecionar categoría</option>
                                                     @foreach($categories as $category)
                                                         <option
@@ -144,4 +168,4 @@
         });
 
     </script>
-    @endpush
+@endpush

@@ -42,6 +42,7 @@ class CoursesController extends Controller
     {
         $request->validate([
             "curso" => "required",
+            "type" => "required",
         ]);
 
         //return $request;
@@ -86,6 +87,11 @@ class CoursesController extends Controller
      */
     public function update(Request $request, Course $course)
     {
+        $request->validate([
+            "curso" => "required",
+            "type" => "required",
+        ]);
+
         $data = $request->all();
 
         $course->update($data);

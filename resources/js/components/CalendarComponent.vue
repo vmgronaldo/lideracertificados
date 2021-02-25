@@ -176,7 +176,7 @@
                             <div class="form-group">
                                 <select name="course_id" id="course_id" class="form-control " placeholder="Seleccionar"  v-model="newEvent.course_id" >
                                     <option value="">Seleccionar curso:</option>
-                                    <option :value="item.id" v-for="item in items"    :key="item.name">{{item.curso}}</option>
+                                    <option :value="item.id" v-for="item in items"    :key="item.name">{{item.curso}} - {{item.type}}</option>
                                 </select>
                                 <div v-if="errors && errors.course_id" class="text-danger">{{ errors.course_id[0] }}</div>
                             </div>

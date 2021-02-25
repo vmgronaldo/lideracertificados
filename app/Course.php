@@ -8,6 +8,7 @@ class Course extends Model
 {
     protected $fillable = [
         'category_id',
+        'type',
         'trainer_id',
         'curso',
         'time',

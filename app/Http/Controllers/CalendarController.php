@@ -47,6 +47,7 @@ class CalendarController extends Controller
             return array(
                 'id' => $item->id,
                 'curso' => $item->curso,
+                'type' => $item->type,
             );
         });
 
