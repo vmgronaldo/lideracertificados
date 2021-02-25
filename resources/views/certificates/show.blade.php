@@ -16,7 +16,7 @@
     @if (optional($certificate->course)->type === "Capacitación")
         <p class="capacitacion">Por haber participado satisfactoriamente en la {{$certificate->course->type}} de:</p>
     @else
-        <p class="capacitacion">Por haber participado satisfactoriamente en el {{$certificate->course->type}} de:</p>
+        <p class="capacitacion">Por haber aprobado satisfactoriamente en el {{$certificate->course->type}} de:</p>
     @endif
 
     <p class="curso"><strong>“{{$certificate->course->curso}}”</strong></p>
