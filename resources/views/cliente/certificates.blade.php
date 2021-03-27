@@ -34,8 +34,15 @@
         <img src="{{url($certificate->course->trainer->firma)}}" width="160" alt="Firma">
         <p class="name">{{$certificate->course->trainer->firstname}} {{$certificate->course->trainer->lastname}}</p>
         <p class="cargo"><strong>{{$certificate->course->trainer->profesion}}</strong></p>
-        <p class="extra"><strong>CAPACITADOR</strong></p>
-        <p class="cip"><strong>CIP: {{$certificate->course->trainer->cip}}</strong></p>
+        @if (optional($certificate->course->trainer)->email == "pquisperuiz@gmail.com")
+            <p class="extra"><strong>LIDERA EHSQ</strong></p>
+        @else
+            <p class="extra"><strong>CAPACITADOR</strong></p>
+        @endif
+        @if (optional($certificate->course->trainer)->cip)
+            <p class="cip"><strong>CIP: {{$certificate->course->trainer->cip}}</strong></p>
+        @endif
+
     </div>
 
 
