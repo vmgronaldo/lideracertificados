@@ -11,6 +11,7 @@ class Participants extends Model
 {
     use Notifiable;
     protected $fillable = [
+        'tipo',
         'firstname',
         'lastname',
         'email',

@@ -89,6 +89,7 @@ class ParticipansController extends Controller
             $create = new Participants();
             $create->firstname = $request->get('firstname');
             $create->lastname = $request->get('lastname');
+            $create->tipo = $request->get('tipo');
             $create->dni = $request->get('dni');
             $create->email = $request->get('email');
             $create->save();

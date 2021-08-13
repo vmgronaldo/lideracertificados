@@ -97,6 +97,7 @@ class ParticipantsDatatable extends DataTable
                   ->width(100)
                   ->addClass('text-center')->title('Ver'),
             Column::make('id'),
+            Column::make('tipo'),
             Column::make('dni'),
             Column::make('firstname')->title('Nombre(s)'),
             Column::make('lastname')->title('Apellido(s)'),

@@ -19,11 +19,11 @@
 
             <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
-                    <img src="{{asset('img/marte.jpg')}}" class="card-img-top" width="100%" alt="Image">
+                    <img src="{{asset('img/foto-para-certificados-pagina-como-objeto-inteligente-1.png')}}" class="card-img-top" width="100%" alt="Image">
                     <div class="card-body">
                         <p class="card-text">Datos personales:</p>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Dni: {{$participants->dni}}</li>
+                            <li class="list-group-item">{{$participants->tipo}}: {{$participants->dni}}</li>
                             <li class="list-group-item">Nombre(s): {{$participants->firstname}} {{$participants->lastname}}</li>
                             <li class="list-group-item">Email: {{$participants->email}}</li>
                         </ul>

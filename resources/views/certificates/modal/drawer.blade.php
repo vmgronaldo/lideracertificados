@@ -19,6 +19,14 @@
                     <div class="card">
                         <div class="card-header">Crear de participante</div>
                         <div class="card-body">
+                            <div class="">
+                                <select name="tipo" id="tipo"  v-model="form.tipo" required class="form-control mb-3">
+                                    <option value="DNI">DNI</option>
+                                    <option value="RUC">RUC</option>
+                                    <option value="C.E">C.E</option>
+                                    <option value="PASAPORTE" >PASAPORTE</option>
+                                </select>
+                            </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">

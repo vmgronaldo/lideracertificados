@@ -12,7 +12,7 @@
 
     <p class="otorga">Otorgado a:</p>
     <p class="participante">{{$certificate->model->lastname}}, {{$certificate->model->firstname}}</p>
-    <p class="identificacion">Identificado con <strong>N° DNI: </strong>{{$certificate->model->dni}}</p>
+    <p class="identificacion">Identificado con <strong>N° {{$participants->tipo}}: </strong>{{$certificate->model->dni}}</p>
     @if (optional($certificate->course)->type === "Capacitación")
         <p class="capacitacion">Por haber participado satisfactoriamente en la {{$certificate->course->type}} de:</p>
     @else
