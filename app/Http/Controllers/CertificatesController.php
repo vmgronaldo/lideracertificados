@@ -84,6 +84,8 @@ class CertificatesController extends Controller
 
         $filename = 'Certificado(s)';
 
+        //return $certificate->model;
+
         //return view('certificates.show',compact('certificate','today','ano'));
            $pdf = PDF::loadView('certificates.show',['certificate'=>$certificate,'today'=>$today,'filename'=>$filename,'ano'=>$ano])->setPaper('a4', 'landscape');
         return $pdf->stream($filename.'.pdf');
