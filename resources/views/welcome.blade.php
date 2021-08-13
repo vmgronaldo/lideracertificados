@@ -109,7 +109,7 @@
                             <div class="card-body">
                                 <form class="d-inline" method="GET" action="{{ route('participante.index') }}">
                                     @csrf
-                                    <input type="text" placeholder="Ingrese su DNI" autocomplete="off" class="form-control" name="q">
+                                    <input type="text" placeholder="Ingrese su N° de Documento" autocomplete="off" class="form-control" name="q">
                                     <button type="submit" class="btn btn-primary mt-3">{{ __('Buscar...') }}</button>.
                                 </form>
                             </div>
