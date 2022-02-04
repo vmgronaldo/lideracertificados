@@ -51,7 +51,7 @@
                                         <i class="fa fa-user"></i>
                                 </span>
                                         </div>
-                                        <input type="text" placeholder="Codigo DNI:" name="dni" max="8" maxlength="8"
+                                        <input type="text" placeholder="Codigo DNI:" name="dni" max="20" maxlength="20"
                                                class="form-control" id="dni" aria-describedby="dni">
 
                                     </div>

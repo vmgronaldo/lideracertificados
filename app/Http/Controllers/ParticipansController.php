@@ -68,7 +68,7 @@ class ParticipansController extends Controller
     public function storeCertificate(Request $request)
     {
         $request->validate([
-            "dni" => "required|max:8",
+            "dni" => "required|max:20",
             "firstname" => "required",
             "lastname" => "required",
             "email" => "required|email",

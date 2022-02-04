@@ -69,7 +69,7 @@
                                 </span>
                                         </div>
                                         <input type="text" placeholder="Codigo DNI:" name="dni"
-                                               value="{{old('dni',$participant->dni)}}" max="8" maxlength="8"
+                                               value="{{old('dni',$participant->dni)}}" max="20" maxlength="20"
                                                class="form-control" id="dni" aria-describedby="dni">
 
                                     </div>
