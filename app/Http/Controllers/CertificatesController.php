@@ -123,7 +123,10 @@ class CertificatesController extends Controller
      */
     public function destroy($id)
     {
-        //
+     $certificate = Certificates::find($id);
+
+        $certificate->delete();
+        return redirect()->route("certificates.index")->withFlash("Certificado Eliminado");
     }
 
 

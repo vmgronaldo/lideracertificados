@@ -34,10 +34,17 @@ class CertificatesDatatable extends DataTable
                 return new HtmlString('<span class="badge">'.$item->created_at->diffForHumans().'</span>');
             })
             ->addColumn('action', function ($item) {
-                $button ='
+                $button ='<div style="    display: flex;
+    gap: 0.45rem;">
                           <a class="btn btn-primary" target="_blank" href="' . route('certificates.show', $item->id) . '">
                           <i class="fa fa-eye" aria-hidden="true"></i>
                           </a>';
+                $button .= '<form  method="post" class="delete" action="'.route('certificates.destroy', $item->id) .'"> 
+                    '.method_field('DELETE').'
+                   <input type="hidden" name="_token" value="' . csrf_token() . ' ">
+                    <button class="btn btn-danger" type="submit"> <i class="fa fa-trash" aria-hidden="true"></i></button>
+                </form></div>';
+
                 return $button;
             });
     }
