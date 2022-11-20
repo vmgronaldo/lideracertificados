@@ -14,7 +14,13 @@ class ClienteController extends Controller
      */
     public function index(Request $request)
     {
-        $participants = Participants::query()->where('dni', $request->get('q'))->firstOrFail();
+        $tipo = $request->get('tipo');
+
+        if ($tipo == 'email'){
+            $participants = Participants::query()->where('email', $request->get('q'))->firstOrFail();
+        }else{
+            $participants = Participants::query()->where('dni', $request->get('q'))->firstOrFail();
+        }
 
         return view('cliente.show',compact('participants'));
     }

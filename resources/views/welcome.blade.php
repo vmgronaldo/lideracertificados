@@ -104,12 +104,25 @@
                 <div class="row justify-content-center">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">{{ __('Verificar Certificado | En línea') }}</div>
+                            <div class="card-header">{{ __('Verificar Certificado | En línea | Consulta con Email o tu N° de documento') }}</div>
 
                             <div class="card-body">
                                 <form class="d-inline" method="GET" action="{{ route('participante.index') }}">
                                     @csrf
-                                    <input type="text" placeholder="Ingrese su N° de Documento" autocomplete="off" class="form-control" name="q">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <select name="tipo" class="form-control" id="tipo">
+                                                <option value="email">EMAIL</option>
+                                                <option value="dni">DNI</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input type="text" placeholder="Ingrese su EMAIL o DNI" autocomplete="off" class="form-control" name="q">
+
+                                        </div>
+                                    </div>
+
+
                                     <button type="submit" class="btn btn-primary mt-3">{{ __('Buscar...') }}</button>.
                                 </form>
                             </div>

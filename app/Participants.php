@@ -15,6 +15,7 @@ class Participants extends Model
         'firstname',
         'lastname',
         'email',
+'check_dni',
         'dni'
     ];
 
@@ -22,6 +23,10 @@ class Participants extends Model
     {
         return $this->morphMany(Certificates::class,'model');
     }
-
+    public function scopeBuscarpor($query, $tipo, $buscar) {
+        if ( ($tipo) && ($buscar) ) {
+            return $query->where($tipo,'like',"%$buscar%");
+        }
+    }
 
 }

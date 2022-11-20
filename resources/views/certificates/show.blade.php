@@ -11,8 +11,11 @@
 <div id="pagina">
 
     <p class="otorga">Otorgado a:</p>
-    <p class="participante">{{$certificate->model->lastname}}, {{$certificate->model->firstname}}</p>
+    <p class="participante">{{$certificate->model->firstname}} {{$certificate->model->lastname}}</p>
+    @if ($certificate->check_dni)
     <p class="identificacion">Identificado con <strong>N° {{optional($certificate->model)->tipo}}: </strong>{{$certificate->model->dni}}</p>
+
+    @endif
     @if (optional($certificate->course)->type === "Capacitación")
         <p class="capacitacion">Por haber asistido y aprobado satisfactoriamente la {{$certificate->course->type}} de:</p>
     @else
@@ -27,9 +30,9 @@
     @else
         <p class="fecha">Realizado el {{ optional($certificate->course->calendar->start_date)->format('D')}} {{optional($certificate->course->calendar->start_date)->format('d')}} de {{optional($certificate->course->calendar->start_date)->format('M')}} del {{optional($certificate->course->calendar)->start_date->format('Y')}} por la empresa Lidera EHSQ.</p>
     @endif
-
+    @if (optional($certificate->course)->time)
     <p class="duracion">Con una duración de {{$certificate->course->time}} {{$certificate->course->extension}} académicas.</p>
-
+    @endif
     <div class="firma_trainer">
         <img src="{{url($certificate->course->trainer->firma)}}" width="160" alt="Firma">
         <p class="name">{{$certificate->course->trainer->firstname}} {{$certificate->course->trainer->lastname}}</p>
