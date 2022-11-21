@@ -11,9 +11,11 @@
 <div id="pagina">
 
     <p class="otorga">Otorgado a:</p>
-    <p class="participante">{{$certificate->model->lastname}}, {{$certificate->model->firstname}}</p>
-    <p class="identificacion">Identificado con <strong>N° {{optional($certificate->model)->tipo}}: </strong>{{$certificate->model->dni}}</p>
+    <p class="participante">{{$certificate->model->firstname}}</p>
+    @if ($certificate->check_dni)
+        <p class="identificacion">Identificado con <strong>N° {{optional($certificate->model)->tipo}}: </strong>{{$certificate->model->dni}}</p>
 
+    @endif
     @if (optional($certificate->course)->type === "Capacitación")
         <p class="capacitacion">Por haber asistido y aprobado satisfactoriamente la {{$certificate->course->type}} de:</p>
     @else
