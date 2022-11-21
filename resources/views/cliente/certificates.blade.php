@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Certificado {{$certificate->model->firstname}} {{$certificate->model->lastname}} | Lidera EHSQ</title>
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css?v=1.1')}}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 </head>
@@ -12,10 +12,11 @@
 
     <p class="otorga">Otorgado a:</p>
     <p class="participante">{{$certificate->model->firstname}}</p>
+
     @if ($certificate->check_dni)
         <p class="identificacion">Identificado con <strong>N° {{optional($certificate->model)->tipo}}: </strong>{{$certificate->model->dni}}</p>
-
     @endif
+
     @if (optional($certificate->course)->type === "Capacitación")
         <p class="capacitacion">Por haber asistido y aprobado satisfactoriamente la {{$certificate->course->type}} de:</p>
     @else
