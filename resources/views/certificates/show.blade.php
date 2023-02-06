@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Certificado {{$certificate->model->firstname}} {{$certificate->model->lastname}} | Lidera EHSQ</title>
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css?v=1.1')}}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 </head>
@@ -50,7 +50,7 @@
     </div>
 
 
-    <div class="firma_david">
+    <div class="firma_david ">
         <img src="{{asset('img/firma_david.png')}}" width="160" alt="Firma">
         <p class="name">Ing.David M. Arroyo Delgado</p>
         <p class="cip"><strong>CIP: 290355</strong></p>
