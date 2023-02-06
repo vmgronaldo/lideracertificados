@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Certificado {{$certificate->model->firstname}} {{$certificate->model->lastname}} | Lidera EHSQ</title>
-    <link rel="stylesheet" href="{{asset('css/style.css?v=1.5')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css?v=1.6')}}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 </head>
