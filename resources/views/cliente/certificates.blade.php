@@ -11,7 +11,7 @@
 <div id="pagina">
 
     <p class="otorga">Otorgado a:</p>
-    <p class="participante">{{$certificate->model->firstname}}</p>
+    <p class="participante">{{$certificate->model->firstname}} {{$certificate->model->lastname}}</p>
 
     @if ($certificate->check_dni)
         <p class="identificacion">Identificado con <strong>N° {{optional($certificate->model)->tipo}}: </strong>{{$certificate->model->dni}}</p>
