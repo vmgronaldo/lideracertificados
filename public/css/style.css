@@ -126,13 +126,13 @@
 }
 .firma_david .cip{
   position: absolute;
-  right: 26%;
-  top: 95%;
+  right: 20%;
+  top: 90%;
   font-family: 'Roboto',sans-serif;
 }
 .firma_trainer .name{
     position: absolute;
-    left: 8%;
+    left: 14%;
     top: 86%;
     font-family: 'Roboto',sans-serif;
     border-top:2px solid #1cb7ff;
