@@ -28,7 +28,7 @@ class CertificatesDatatable extends DataTable
                 return new HtmlString('<span class="badge">'.$item->model->firstname.' '.$item->model->lastname.'</span>');
             })
             ->editColumn('course_id', function ($item){
-                return new HtmlString('<span class="badge">'.$item->course->curso.'</span>');
+                return new HtmlString('<span class="badge">'.optional($item->course)2->curso.'</span>');
             })
             ->editColumn('created_at', function ($item){
                 return new HtmlString('<span class="badge">'.$item->created_at->diffForHumans().'</span>');
@@ -39,7 +39,7 @@ class CertificatesDatatable extends DataTable
                           <a class="btn btn-primary" target="_blank" href="' . route('certificates.show', $item->id) . '">
                           <i class="fa fa-eye" aria-hidden="true"></i>
                           </a>';
-                $button .= '<form  method="post" class="delete" action="'.route('certificates.destroy', $item->id) .'"> 
+                $button .= '<form  method="post" class="delete" action="'.route('certificates.destroy', $item->id) .'">
                     '.method_field('DELETE').'
                    <input type="hidden" name="_token" value="' . csrf_token() . ' ">
                     <button class="btn btn-danger" type="submit"> <i class="fa fa-trash" aria-hidden="true"></i></button>

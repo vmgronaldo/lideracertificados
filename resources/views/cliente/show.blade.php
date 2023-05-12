@@ -30,7 +30,7 @@
                                 <th>Curso</th>
                                 <th>Fecha</th>
                                 <th>Ver Certificado</th>
-                                <th>Descargar</th>
+                                <th>Estado</th>
                             </tr>
                             </thead>
 
@@ -41,7 +41,8 @@
                                     <td> {{$certificado->course->curso}} </td>
                                     <td>{{$certificado->created_at}}</td>
                                     <td> <a target="_blank" href="{{route('certificados.show',$certificado->id)}}" class="btn btn-primary"><i class="fa fa-address-card mr-1" aria-hidden="true"></i>  Ver Certificado</a></td>
-                                    <td> <a  href="{{route('certificados.show',$certificado->id)}}" class="btn btn-primary" title="Certificado_{{$participants->firstname}}_{{$participants->lastname}}" download><i class="fa fa-download mr-1" aria-hidden="true"></i>  Descargar</a></td>
+                                    <td> <span class="badge badge-success">Aprobado</span>
+                                    </td>
 
                                 </tr>
                             @endforeach
