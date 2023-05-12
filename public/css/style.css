@@ -159,7 +159,15 @@
     font-family: 'Roboto',sans-serif;
     margin-top: .2rem;
 }
-
+.firma_david .cip{
+    position: absolute;
+    right:30%;
+    top: 95%;
+    font-weight: 400;
+    font-size: .9rem;
+    font-family: 'Roboto',sans-serif;
+    margin-top: .2rem;
+}
 .firma_trainer .extra{
     position: absolute;
     left: 17%;
