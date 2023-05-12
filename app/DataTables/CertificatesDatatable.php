@@ -28,7 +28,7 @@ class CertificatesDatatable extends DataTable
                 return new HtmlString('<span class="badge">'.$item->model->firstname.' '.$item->model->lastname.'</span>');
             })
             ->editColumn('course_id', function ($item){
-                return new HtmlString('<span class="badge">'.optional($item->course)2->curso.'</span>');
+                return new HtmlString('<span class="badge">'.optional($item->course)->curso.'</span>');
             })
             ->editColumn('created_at', function ($item){
                 return new HtmlString('<span class="badge">'.$item->created_at->diffForHumans().'</span>');
