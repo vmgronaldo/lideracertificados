@@ -49,14 +49,23 @@
         @endif
     </div>
 
-
-    <div class="firma_david ">
+    @if($certificate->model->cordinador)
+            <div class="firma_david ">
+        <img src="{{asset('img/angel-firma.png')}}" width="160" alt="Firma">
+        <p class="name">Mahonri Vidal Cordova</p>
+        <p class="cargo"><strong>Coordinador Académico</strong></p>
+        <p class="extra"><strong>LIDERA EHSQ</strong></p>
+    </div>
+    @else@
+            <div class="firma_david ">
         <img src="{{asset('img/firma_david.png')}}" width="160" alt="Firma">
         <p class="name">Ing.David M. Arroyo Delgado</p>
         <p class="cargo"><strong>GERENTE GENERAL</strong></p>
         <p class="extra"><strong>LIDERA EHSQ</strong></p>
         <p class="cip"><strong>CIP: 290355</strong></p>
     </div>
+    @endif
+   
 
 
 </div>

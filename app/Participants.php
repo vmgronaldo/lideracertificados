@@ -15,8 +15,9 @@ class Participants extends Model
         'firstname',
         'lastname',
         'email',
-'check_dni',
-        'dni'
+        'check_dni',
+        'dni',
+        'cordinador'
     ];
 
     public function certificates()
