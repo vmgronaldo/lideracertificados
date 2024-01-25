@@ -16,6 +16,9 @@
     z-index: 0;
     overflow: hidden;
 }
+.add{
+    color:white;
+}
 .otorga{
     position: absolute;
     left: 90%;
